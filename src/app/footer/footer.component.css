@@ -1,0 +1,14 @@
+.btn {
+  background: transparent;
+  color: orange;
+  box-shadow: 0 0 0 2px orange;
+}
+.btn:hover {
+  background: transparent;
+  background-color: orange;
+  color: white;
+}
+footer button.active{
+    background-color: orange;
+    color: white;
+}

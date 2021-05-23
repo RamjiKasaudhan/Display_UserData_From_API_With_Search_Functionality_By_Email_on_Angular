@@ -1,0 +1,25 @@
+<!--Navbar-->
+<nav class="navbar ">
+    <form class="form-inline">
+        <input class="form-control search-input mr-sm-2" type="text" name="text-search" [(ngModel)]="searchValue"
+            placeholder="Enter email to search" aria-label="Search">
+    </form>
+    <div class="navbar">
+        <h1 class="form-control navbar-brand">User Data View</h1>
+    </div>
+</nav>
+
+<!--User Cards-->
+<div class="container">
+    <div class="row text-center">
+        <div class="column" *ngFor="let user of userData1.data | searchFilterPipe : searchValue |paginate: { id: 'listing_pagination', 
+                itemsPerPage: 6, currentPage: page,
+            totalItems: totalRecords }">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{user.avatar}}" alt="" width="100"
+                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0">{{user.first_name}}&nbsp;{{user.last_name}}</h5>
+                <span class="small text-uppercase text-muted">{{user.email}}</span>
+            </div>
+        </div>
+    </div>
+</div>
